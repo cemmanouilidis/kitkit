@@ -1,4 +1,4 @@
-kitkit
+KitKit
 ======
 
-Objc2.0 Kit on Linux
+An Objc2.0 Kit for Linux
