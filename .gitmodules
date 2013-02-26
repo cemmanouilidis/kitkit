@@ -7,3 +7,9 @@
 [submodule "gnustep-libobjc2"]
 	path = gnustep-libobjc2
 	url = https://github.com/gnustep/gnustep-libobjc2.git
+[submodule "llvm"]
+	path = llvm
+	url = http://llvm.org/git/llvm.git
+[submodule "cmake"]
+	path = cmake
+	url = http://cmake.org/cmake.git

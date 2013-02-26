@@ -1,0 +1,80 @@
+install_dir=/opt/kitkit-1.0rc
+
+# install requirements using macports: sudo port install libxml2 gnutls icu
+
+echo
+echo "################## BUILDING LLVM & CLANG ######################################"
+echo 
+cd llvm 
+git submodule add -f http://llvm.org/git/clang.git tools/clang 
+git submodule update --init
+./configure --prefix=$install_dir CC=gcc CXX=g++
+make
+make install
+git rm tools/clang
+git rm .gitmodules 
+git clean -df 
+cd ..
+
+echo
+echo "################## BUILDING CMAKE ######################################"
+echo 
+cd cmake 
+./configure --prefix=$install_dir
+make
+make install
+git clean -df 
+cd ..
+
+
+export CC=$install_dir/bin/clang
+export CXX=$install_dir/bin/clang++
+
+echo
+echo "################## BUILDING GNUSTEP Makefiles ######################################"
+echo 
+cd gnustep-make
+./configure --prefix=$install_dir
+make
+make install
+cd ..
+
+export GNUSTEP_MAKEFILES=$install_dir/share/GNUstep/Makefiles
+export PATH=$install_dir/bin/:$PATH
+export LD_LIBRARY_PATH=$install_dir/lib/:/usr/lib:/lib/
+
+echo
+echo "################## BUILDING GNUSTEP OBJC ##########################################"
+echo 
+cd gnustep-libobjc2
+make 
+make install
+cd ..
+
+echo
+echo "################## BUILDING GNUSTEP Makefiles (again) ######################################"
+echo 
+cd gnustep-make
+./configure --prefix=$install_dir
+make
+make install
+cd ..
+
+echo
+echo "################## BUILDING GNUSTEP BASE ##########################################"
+echo
+cd gnustep-base
+./configure --prefix=$install_dir --disable-importing-config-file
+make
+make install
+cd ..
+
+
+echo
+echo "################## CLEAN UP ##########################################"
+echo
+
+for d in gnustep-base  gnustep-libobjc2  gnustep-make
+do
+    cd $d ; git clean -df; cd -
+done
