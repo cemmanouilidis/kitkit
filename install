@@ -1,4 +1,4 @@
-install_dir=/opt/kitkit-1.0rc
+install_dir=/opt/kitkit-1.0-rc1
 
 # install requirements using macports: sudo port install libxml2 gnutls icu
 
@@ -8,6 +8,9 @@ echo
 cd llvm 
 git submodule add -f http://llvm.org/git/clang.git tools/clang 
 git submodule update --init
+cd tools/clang 
+git checkout 863fb3574468ef9fdc9f5ea3fa3d62671979ccf1
+cd ../..
 ./configure --prefix=$install_dir CC=gcc CXX=g++
 make
 make install
@@ -78,3 +81,6 @@ for d in gnustep-base  gnustep-libobjc2  gnustep-make
 do
     cd $d ; git clean -df; cd -
 done
+
+
+
