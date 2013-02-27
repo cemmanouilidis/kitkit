@@ -1,7 +1,5 @@
 install_dir=/opt/kitkit-1.0-rc1
 
-# install requirements using macports: sudo port install libxml2 gnutls icu
-
 echo
 echo "################## BUILDING LLVM & CLANG ######################################"
 echo 
@@ -72,15 +70,24 @@ make
 make install
 cd ..
 
-
 echo
 echo "################## CLEAN UP ##########################################"
 echo
-
 for d in gnustep-base  gnustep-libobjc2  gnustep-make
 do
     cd $d ; git clean -df; cd -
 done
 
+echo
+echo "################## Install KitKit files ####################################"
+echo
+dest=$install_dir/share/cmake-2.8/Modules/KitKit.cmake
+cp files/cmake/Modules/KitKit.cmake $dest 
+sed -i -e "s,__KITKIT_PREFIX__,$install_dir,g" $dest
 
-
+mkdir -p $install_dir $install_dir/etc/ld.so.conf.d
+dest=$install_dir/etc/ld.so.conf.d/kitkit.conf
+cp files/etc/ld.so.conf.d/kitkit.conf $dest 
+sed -i -e "s,__KITKIT_PREFIX__,$install_dir,g" $dest
+ln -s $dest /etc/ld.so.conf.d/
+ldconfig
