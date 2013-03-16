@@ -1,4 +1,4 @@
-# KitKit - A croos platform Objective-C 2.0 Kit
+# KitKit - A cross platform Objective-C 2.0 Kit
 ![KitKit Logo](https://dl.dropbox.com/u/1111373/kitkit.png)
 
 KitKit is a cross platform Objective-C 2.0 environment for Linux and OSX.
@@ -31,6 +31,22 @@ Add KitKit's 'bin' directory to your $PATH variable:
     $ e.g. add this into ~/.bashrc or ~/.profile 
     $ export PATH=/opt/kitkit-1.0-rc1/bin:$PATH
 
+## Binary versions
+You may want to download a binary version of KitKit, in order to save all the build time.
+We provide binary versions of KitKit for Ubuntu (64bit and 32bit) and OSX 
+    
+### Ubuntu 64 bit (tested on Ubuntu 12.10)
+    $ wget https://dl.dropbox.com/u/1111373/KitKit/kitkit-1.0-rc1-linux-x64.tar.bz2
+    $ tar -xvjf kitkit-1.0-rc1-linux-x64.tar.bz2
+    $ cd kitkit-1.0-rc1-linux-x64
+    $ ./install destination
+
+### OSX 
+    $ curl -O https://dl.dropbox.com/u/1111373/KitKit/kitkit-1.0-rc1-osx.tar.bz2
+    $ tar -xvjf kitkit-1.0-rc1-osx.tar.bz2
+    $ cd kitkit-1.0-rc1-osx
+    $ ./install destination
+
 ## Compile and run Objective-C 2.0 code 
 This repository comes with a demo project to show you how to build and
 run an Objective-C 2.0 command line application with KitKit.
@@ -51,4 +67,3 @@ run an Objective-C 2.0 command line application with KitKit.
 [cmake]: http://www.cmake.org
 [GNUstep]: http://www.gnustep.org
 [submodules]: http://book.git-scm.com/5_submodules.html
-
