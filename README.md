@@ -22,7 +22,7 @@ We provide binary versions of KitKit for Ubuntu (64bit and 32bit) and OSX
     $ ./install destination
 
 
-## KitKit demo 
+## GMMagic - A KitKit Sample Project
 GMMagic is a very thin Objective-C wrapper for the libmagic library.
 The inlcuded demo command line application "magician" does basicacly the same job as the command "file --mime-type".
 GMMagic was created using Xcode and the project was extended by adding GMMagic.kitkit + Makefile to demonstrate
