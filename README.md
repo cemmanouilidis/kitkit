@@ -23,8 +23,11 @@ We provide binary versions of KitKit for Ubuntu (64bit and 32bit) and OSX
 
 
 ## KitKit demo 
-The demo project GMMagic uses KitKit to build an Objective-C library and command line application on Linux and OSX.
-GMMagic is tested on Ubuntu and OSX, check it out:
+GMMagic is a very thin Objective-C wrapper for the libmagic library.
+The inlcuded demo command line application "magician" does basicacly the same job as the command "file --mime-type".
+GMMagic was created using Xcode and the project was extended by adding GMMagic.kitkit + Makefile to demonstrate
+a strategy for a cross platform Objective-C (Xcode) Projects.
+
 
 ### Build GMMagic on Ubuntu
     $ wget https://dl.dropbox.com/u/1111373/KitKit/GMMagic.tar.bz2
@@ -37,6 +40,9 @@ GMMagic is tested on Ubuntu and OSX, check it out:
     $ tar -xvzf GMMagic.tar.bz2 
     $ make 
     $ bin/magician GMMagicTests/data/*
+
+Please note, for OSX you still need to have Xcode installed, since KitKit requires Apple's Foundation Framework
+to build your application.
 
 
 ## Building KitKit from scratch
