@@ -89,6 +89,7 @@ then
 
     mkdir -p $dist $dist/etc/ld.so.conf.d
     dest=$dist/etc/ld.so.conf.d/kitkit.conf
+    cp files/cmake/Modules/KitKit.cmake $dest 
 fi 
 
 
@@ -98,8 +99,6 @@ echo "#  usage: ./install destination" >> $install_script
 echo "install_dir=\"\$1\"" >> $install_script
 echo "echo \"Installing KitKit in \$install_dir/$dist_name\"" >> $install_script
 echo "cp -a $dist_name \$install_dir" >> $install_script
-echo "echo -e \"\nnow add KitKit to your 'PATH' variable, e.g. in ~/.bashrc \"" >> $install_script
-echo "echo -e \"export PATH=\$install_dir/$dist_name/bin:\\\$PATH\" " >> $install_script
 echo "dest=\$install_dir/$dist_name/share/cmake-2.8/Modules/KitKit.cmake" >> $install_script
 echo "sed -i -e "s,__KITKIT_PREFIX__,\$install_dir/$dist_name,g" \$dest" >> $install_script
 echo "" >> $install_script
@@ -107,9 +106,14 @@ echo "if [ \"$system\" = \"Linux\" ] ;" >> $install_script
 echo "then" >> $install_script
 echo "    dest=\$install_dir/$dist_name/etc/ld.so.conf.d/kitkit.conf" >> $install_script
 echo "    sed -i -e "s,__KITKIT_PREFIX__,\$install_dir/$dist_name,g" \$dest" >> $install_script
-echo "    ln -s $dest /etc/ld.so.conf.d/" >> $install_script
+echo "    echo \"sudo ln -s $dest /etc/ld.so.conf.d/ \"" >> $install_script
+echo "    sudo ln -s $dest /etc/ld.so.conf.d/" >> $install_script
 echo "    ldconfig" >> $install_script
 echo "fi" >> $install_script 
+echo "" >> $install_script
+echo "echo -e \"\nnow add KitKit to your 'PATH' variable, e.g. in ~/.bashrc \"" >> $install_script
+echo "echo -e \"export PATH=\$install_dir/$dist_name/bin:\\\$PATH\" " >> $install_script
+
 chmod +x $install_script
 
 readme=$build_dir/README
