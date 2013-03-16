@@ -4,6 +4,7 @@
 KitKit is a cross platform Objective-C 2.0 environment for Linux and OSX.
 KitKit is build on llvm, cmake, GNUstep and libobjc2.0
 
+
 ## Binary versions
 You may want to download a binary version of KitKit, in order to save all the build time.
 We provide binary versions of KitKit for Ubuntu (64bit and 32bit) and OSX 
@@ -19,6 +20,23 @@ We provide binary versions of KitKit for Ubuntu (64bit and 32bit) and OSX
     $ tar -xvjf kitkit-1.0-rc1-osx.tar.bz2
     $ cd kitkit-1.0-rc1-osx
     $ ./install destination
+
+
+## KitKit demo 
+The demo project GMMagic uses KitKit to build an Objective-C library and command line application on Linux and OSX.
+GMMagic is tested on Ubuntu and OSX, check it out:
+
+### Build GMMagic on Ubuntu
+    $ wget https://dl.dropbox.com/u/1111373/KitKit/GMMagic.tar.bz2
+    $ tar -xvzf GMMagic.tar.bz2 
+    $ make 
+    $ bin/magician GMMagicTests/data/*
+
+### Build GMMagic on OSX
+    $ curl -O https://dl.dropbox.com/u/1111373/KitKit/GMMagic.tar.bz2
+    $ tar -xvzf GMMagic.tar.bz2 
+    $ make 
+    $ bin/magician GMMagicTests/data/*
 
 
 ## Building KitKit from scratch
@@ -49,21 +67,6 @@ Add KitKit's 'bin' directory to your $PATH variable:
     $ e.g. add this into ~/.bashrc or ~/.profile 
     $ export PATH=/opt/kitkit-1.0-rc1/bin:$PATH
 
-
-## Compile and run Objective-C 2.0 code 
-This repository comes with a demo project to show you how to build and
-run an Objective-C 2.0 command line application with KitKit.
-
-    $ cd demo/hello
-    $ mkdir build
-    $ cd build
-    
-    $ # generate the makefiles and build the demo project
-    $ cmake ..
-    $ make 
-
-    $ # then run
-    ./kitkit-hello
 
 
 [llvm]: http://llvm.org 
