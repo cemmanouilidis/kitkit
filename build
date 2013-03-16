@@ -16,8 +16,9 @@ cd ../..
 ./configure --prefix=$dist CC=gcc CXX=g++
 make
 make install
+git rm -f .gitmodules
+rm -rf tools/clang
 git rm tools/clang
-git rm .gitmodules 
 git clean -df 
 cd ..
 
@@ -118,6 +119,3 @@ echo "" >> $readme
 echo "Then add kitkit to your PATH variable" >> $readme
 echo "e.g. in ~/.bashrc" >> $readme
 echo "export PATH=/path/to/kitkit/bin:\$PATH" >> $readme
-
-
-
