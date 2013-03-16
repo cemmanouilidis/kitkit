@@ -1,7 +1,7 @@
 # KitKit - An Objective-C 2.0 Kit for Linux 
 ![KitKit Logo](https://dl.dropbox.com/u/1111373/kitkit.png)
 
-KitKit provides Objective-C 2.0 environment for Linux using llvm, cmake and GNUstep.
+KitKit provides a cross platform Objective-C 2.0 environment for Linux and OSX using llvm, cmake and GNUstep.
 
 ## llvm, cmake and GNUstep
 [llvm], [cmake] and [GNUstep] are included as [submodules] of KitKit. So 
@@ -21,7 +21,9 @@ to execute the install script, in order to install KitKit on your machine.
  
     $ # depending on your machine, this takes a lot of time
     $ # since KitKit builds everything from scratch
-    $ sudo ./install
+    $ ./build 
+    $ cd dist 
+    $ ./install /my/favorite/path/to/install/kitkit
 
 The default installation path for KitKit is /opt/kitkit-1.0-rc1.
 Feel free to change this path in the install script, if you need to install 
@@ -34,10 +36,9 @@ Add KitKit's 'bin' directory to your $PATH variable:
     $ export PATH=/opt/kitkit-1.0-rc1/bin:$PATH
 
 ## Compile and run Objective-C 2.0 code 
-This repository comes with a demo [cmake] project to show you how to build and
+This repository comes with a demo project to show you how to build and
 run an Objective-C 2.0 command line application with KitKit.
 
-    $ # create a build directory for cmake 
     $ cd demo/hello
     $ mkdir build
     $ cd build
