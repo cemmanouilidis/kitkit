@@ -4,14 +4,32 @@
 KitKit is a cross platform Objective-C 2.0 environment for Linux and OSX.
 KitKit is build on llvm, cmake, GNUstep and libobjc2.0
 
-## llvm, cmake and GNUstep
+## Binary versions
+You may want to download a binary version of KitKit, in order to save all the build time.
+We provide binary versions of KitKit for Ubuntu (64bit and 32bit) and OSX 
+    
+### Ubuntu 64 bit (tested on Ubuntu 12.10)
+    $ wget https://dl.dropbox.com/u/1111373/KitKit/kitkit-1.0-rc1-linux-x64.tar.bz2
+    $ tar -xvjf kitkit-1.0-rc1-linux-x64.tar.bz2
+    $ cd kitkit-1.0-rc1-linux-x64
+    $ ./install destination
+
+### OSX 
+    $ curl -O https://dl.dropbox.com/u/1111373/KitKit/kitkit-1.0-rc1-osx.tar.bz2
+    $ tar -xvjf kitkit-1.0-rc1-osx.tar.bz2
+    $ cd kitkit-1.0-rc1-osx
+    $ ./install destination
+
+
+## Building KitKit from scratch
+### llvm, cmake and GNUstep
 [llvm], [cmake] and [GNUstep] are included as [submodules] of KitKit. So 
 after cloning KitKit, you will need to grab its submodules as folllows:
 
     $ # be patient, this may take up to several minutes
     $ git submodule update --init
 
-## Building and installing KitKit
+### Building and installing KitKit
 After you have cloned the KitKit repository and its submodules, you need 
 to execute the install script, in order to install KitKit on your machine. 
  
@@ -31,21 +49,6 @@ Add KitKit's 'bin' directory to your $PATH variable:
     $ e.g. add this into ~/.bashrc or ~/.profile 
     $ export PATH=/opt/kitkit-1.0-rc1/bin:$PATH
 
-## Binary versions
-You may want to download a binary version of KitKit, in order to save all the build time.
-We provide binary versions of KitKit for Ubuntu (64bit and 32bit) and OSX 
-    
-### Ubuntu 64 bit (tested on Ubuntu 12.10)
-    $ wget https://dl.dropbox.com/u/1111373/KitKit/kitkit-1.0-rc1-linux-x64.tar.bz2
-    $ tar -xvjf kitkit-1.0-rc1-linux-x64.tar.bz2
-    $ cd kitkit-1.0-rc1-linux-x64
-    $ ./install destination
-
-### OSX 
-    $ curl -O https://dl.dropbox.com/u/1111373/KitKit/kitkit-1.0-rc1-osx.tar.bz2
-    $ tar -xvjf kitkit-1.0-rc1-osx.tar.bz2
-    $ cd kitkit-1.0-rc1-osx
-    $ ./install destination
 
 ## Compile and run Objective-C 2.0 code 
 This repository comes with a demo project to show you how to build and
