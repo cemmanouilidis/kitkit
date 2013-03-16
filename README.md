@@ -1,7 +1,8 @@
-# KitKit - An Objective-C 2.0 Kit for Linux 
+# KitKit - A croos platform Objective-C 2.0 Kit
 ![KitKit Logo](https://dl.dropbox.com/u/1111373/kitkit.png)
 
-KitKit provides a cross platform Objective-C 2.0 environment for Linux and OSX using llvm, cmake and GNUstep.
+KitKit is a cross platform Objective-C 2.0 environment for Linux and OSX.
+KitKit is build on llvm, cmake, GNUstep and libobjc2.0
 
 ## llvm, cmake and GNUstep
 [llvm], [cmake] and [GNUstep] are included as [submodules] of KitKit. So 
@@ -9,11 +10,6 @@ after cloning KitKit, you will need to grab its submodules as folllows:
 
     $ # be patient, this may take up to several minutes
     $ git submodule update --init
-
-[llvm]: http://llvm.org 
-[cmake]: http://www.cmake.org
-[GNUstep]: http://www.gnustep.org
-[submodules]: http://book.git-scm.com/5_submodules.html
 
 ## Building and installing KitKit
 After you have cloned the KitKit repository and its submodules, you need 
@@ -49,3 +45,10 @@ run an Objective-C 2.0 command line application with KitKit.
 
     $ # then run
     ./kitkit-hello
+
+
+[llvm]: http://llvm.org 
+[cmake]: http://www.cmake.org
+[GNUstep]: http://www.gnustep.org
+[submodules]: http://book.git-scm.com/5_submodules.html
+
