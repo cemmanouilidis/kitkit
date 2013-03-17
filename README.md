@@ -33,12 +33,14 @@ a strategy for a cross platform Objective-C (Xcode) Projects.
     $ wget https://dl.dropbox.com/u/1111373/KitKit/GMMagic.tar.bz2
     $ tar -xvzf GMMagic.tar.bz2 
     $ make 
+    $ # now run the sample application magician
     $ bin/magician GMMagicTests/data/*
 
 ### Build GMMagic on OSX
     $ curl -O https://dl.dropbox.com/u/1111373/KitKit/GMMagic.tar.bz2
     $ tar -xvzf GMMagic.tar.bz2 
     $ make 
+    $ # now run the sample application magician
     $ bin/magician GMMagicTests/data/*
 
 Please note, for OSX you still need to have Xcode installed, since KitKit requires Apple's Foundation Framework
