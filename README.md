@@ -65,15 +65,12 @@ to execute the install script, in order to install KitKit on your machine.
     $ cd dist 
     $ ./install /my/favorite/path/to/install/kitkit
 
-The default installation path for KitKit is /opt/kitkit-1.0-rc1.
-Feel free to change this path in the install script, if you need to install 
-KitKit anywhere else. 
-
+ 
 One final step is required before you can use KitKit...
 Add KitKit's 'bin' directory to your $PATH variable:
     
     $ e.g. add this into ~/.bashrc or ~/.profile 
-    $ export PATH=/opt/kitkit-1.0-rc1/bin:$PATH
+    $ export PATH=/my/favorite/path/to/install/kitkit/bin:$PATH
 
 
 
