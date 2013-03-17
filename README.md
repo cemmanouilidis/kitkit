@@ -7,7 +7,7 @@ KitKit is build on llvm, cmake, GNUstep and libobjc2.0
 
 ## Binary versions
 You may want to download a binary version of KitKit, in order to save all the build time.
-We provide binary versions of KitKit for Ubuntu (64bit and 32bit) and OSX 
+We provide binary versions of KitKit for Ubuntu (64bit only) and OSX 
     
 ### Ubuntu 64 bit (tested on Ubuntu 12.04 LTS and 12.10)
     $ wget https://dl.dropbox.com/u/1111373/KitKit/kitkit-1.0-rc1-linux-x64.tar.bz2
