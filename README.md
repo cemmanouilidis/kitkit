@@ -4,11 +4,12 @@
 KitKit is a cross platform Objective-C 2.0 environment for Linux and OSX.
 KitKit is build on llvm, cmake, GNUstep and libobjc2.0
 
+
 ## Binary versions
 You may want to download a binary version of KitKit, in order to save all the build time.
-We provide binary versions of KitKit for Ubuntu (64bit and 32bit) and OSX 
+We provide binary versions of KitKit for Ubuntu (64bit only) and OSX 
     
-### Ubuntu 64 bit (tested on Ubuntu 12.10)
+### Ubuntu 64 bit (tested on Ubuntu 12.04 LTS and 12.10)
     $ wget https://dl.dropbox.com/u/1111373/KitKit/kitkit-1.0-rc1-linux-x64.tar.bz2
     $ tar -xvjf kitkit-1.0-rc1-linux-x64.tar.bz2
     $ cd kitkit-1.0-rc1-linux-x64
@@ -19,6 +20,31 @@ We provide binary versions of KitKit for Ubuntu (64bit and 32bit) and OSX
     $ tar -xvjf kitkit-1.0-rc1-osx.tar.bz2
     $ cd kitkit-1.0-rc1-osx
     $ ./install destination
+
+
+## GMMagic - A KitKit Sample Project
+GMMagic is a very thin Objective-C wrapper for the libmagic library.
+The inlcuded demo command line application "magician" does basicacly the same job as the command "file --mime-type".
+GMMagic was created using Xcode and the project was extended by adding GMMagic.kitkit + Makefile to demonstrate
+a strategy for a cross platform Objective-C (Xcode) Projects.
+
+
+### Build GMMagic on Ubuntu
+    $ wget https://dl.dropbox.com/u/1111373/KitKit/GMMagic.tar.bz2
+    $ tar -xvzf GMMagic.tar.bz2 
+    $ make 
+    $ # now run the sample application magician
+    $ bin/magician GMMagicTests/data/*
+
+### Build GMMagic on OSX
+    $ curl -O https://dl.dropbox.com/u/1111373/KitKit/GMMagic.tar.bz2
+    $ tar -xvzf GMMagic.tar.bz2 
+    $ make 
+    $ # now run the sample application magician
+    $ bin/magician GMMagicTests/data/*
+
+Please note, for OSX you still need to have Xcode installed, since KitKit requires Apple's Foundation Framework
+to build your application.
 
 
 ## Building KitKit from scratch
@@ -39,31 +65,13 @@ to execute the install script, in order to install KitKit on your machine.
     $ cd dist 
     $ ./install /my/favorite/path/to/install/kitkit
 
-The default installation path for KitKit is /opt/kitkit-1.0-rc1.
-Feel free to change this path in the install script, if you need to install 
-KitKit anywhere else. 
-
+ 
 One final step is required before you can use KitKit...
 Add KitKit's 'bin' directory to your $PATH variable:
     
     $ e.g. add this into ~/.bashrc or ~/.profile 
-    $ export PATH=/opt/kitkit-1.0-rc1/bin:$PATH
+    $ export PATH=/my/favorite/path/to/install/kitkit/bin:$PATH
 
-
-## Compile and run Objective-C 2.0 code 
-This repository comes with a demo project to show you how to build and
-run an Objective-C 2.0 command line application with KitKit.
-
-    $ cd demo/hello
-    $ mkdir build
-    $ cd build
-    
-    $ # generate the makefiles and build the demo project
-    $ cmake ..
-    $ make 
-
-    $ # then run
-    ./kitkit-hello
 
 
 [llvm]: http://llvm.org 
